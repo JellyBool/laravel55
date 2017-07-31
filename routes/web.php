@@ -6,3 +6,5 @@ Route::get('/', function () {
 });
 
 Route::resource('posts','PostController');
+
+Route::post('phone','PhoneController@store');

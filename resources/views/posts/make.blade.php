@@ -10,22 +10,15 @@
 <body>
     <div class="container">
 
-        <form action="/posts" method="POST">
-
+        <form action="/phone" method="POST">
+            {{ csrf_field() }}
             <div class="form-group">
-                <label for="title">Title:</label>
+                <label for="title">手机号:</label>
                 <input type="text" name="title" class="form-control" id="title">
             </div>
-
             <div class="form-group">
-                <label for="body">Body:</label>
-                <textarea name="body" class="form-control" id="body"></textarea>
+                <button type="submit" class="btn btn-success">验证手机号</button>
             </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn btn-success">Create Post</button>
-            </div>
-
         </form>
 
 </div>
