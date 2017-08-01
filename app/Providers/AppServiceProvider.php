@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \Blade::if('member',function () {
+           return auth()->check() && auth()->user()->isMember();
+        });
     }
 
     /**

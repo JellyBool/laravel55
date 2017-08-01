@@ -1,7 +1,7 @@
 <?php
 
-
 Route::get('/', function () {
+    auth()->loginUsingId(1);
     return view('welcome');
 });
 

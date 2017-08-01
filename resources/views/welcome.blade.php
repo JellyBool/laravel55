@@ -9,7 +9,11 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
-
+                @member
+                    <p>Member User</p>
+                @else
+                    <p>Guest User</p>
+                @endmember
             </div>
         </div>
     </body>
