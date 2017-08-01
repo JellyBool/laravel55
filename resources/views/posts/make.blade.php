@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <div class="container">
 
-        <form action="/phone" method="POST">
-            {{ csrf_field() }}
-            <div class="form-group">
-                <label for="title">手机号:</label>
-                <input type="text" name="title" class="form-control" id="title">
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success">验证手机号</button>
-            </div>
-        </form>
-
+<div class="container">
+    <form action="/phone" method="POST">
+        {{ csrf_field() }}
+        <div class="form-group">
+            <label for="phone">手机号:</label>
+            <input name="phone" class="form-control" id="phone" value="{{ old('phone') }}">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success">验证手机号</button>
+        </div>
+    </form>
+    @if(count($errors))
+        <div class="has-error">
+            {{ $errors->first() }}
+        </div>
+    @endif
 </div>
 </body>
 </html>

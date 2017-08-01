@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\PhoneValidate;
 use Illuminate\Http\Request;
 
 class PhoneController extends Controller
 {
-    public function store()
+    public function store(Request $request)
     {
-        dd(request('phone'));
+        $request->validate([
+            'phone' => ['required',new PhoneValidate()]
+        ]);
+
+        return 'Nice!';
     }
 }
