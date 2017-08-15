@@ -1,8 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    auth()->loginUsingId(1);
-    return view('welcome');
+    return new \App\Mail\NewUser();
 });
 
 Route::resource('posts','PostController');
