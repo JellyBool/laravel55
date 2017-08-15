@@ -9,8 +9,9 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
+                {{ $name }}
                 @member
-                    <p>Member User</p>
+                    <p>Member Use </p>
                 @else
                     <p>Guest User</p>
                 @endmember
