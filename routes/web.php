@@ -1,7 +1,9 @@
 <?php
 
 Route::get('/', function () {
-    return new \App\Mail\NewUser();
+    $user = \App\User::with('posts')->find(5);
+
+    return new \App\Http\Resources\User($user);
 });
 
 Route::resource('posts','PostController');

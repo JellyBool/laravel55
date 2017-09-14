@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
         \Blade::if('member',function () {
            return auth()->check() && auth()->user()->isMember();
         });
+
+        //Resource::wrap('items');
     }
 
     /**
