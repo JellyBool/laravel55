@@ -4,17 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{csrf_token()}}">
         <title>Laravel</title>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             <div class="content">
-                {{ $name }}
-                @member
-                    <p>Member Use </p>
-                @else
-                    <p>Guest User</p>
-                @endmember
+
             </div>
         </div>
     </body>

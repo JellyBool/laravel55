@@ -14,8 +14,10 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(App\Post::class, function (Faker $faker) {
+    $userIds = \App\User::pluck('id')->toArray();
     return [
         'title' => $faker->sentence,
-        'body' => $faker->paragraph
+        'body' => $faker->paragraph,
+        'user_id' => $faker->randomElement($userIds)
     ];
 });
